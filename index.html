@@ -118,6 +118,148 @@ body:before{background:radial-gradient(ellipse at 12% 12%,#24344c 0,transparent 
 }
 /* Sembunyikan petunjuk ketuk layar */
 .tap-hint{display:none!important}
+/* KW-CAPTION-CSS */
+.kw-caption{position:fixed;left:50%;bottom:calc(16vh + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:14;max-width:94vw;padding:.18em .6em .24em;border-radius:20px;text-align:center;
+  font-family:Inter,Segoe UI,Arial,sans-serif;font-weight:900;letter-spacing:.5px;line-height:1.1;font-size:clamp(34px,6.4vw,92px);
+  color:#ffee00;background:rgba(4,9,18,.86);border:2px solid #ffee0066;text-shadow:0 0 22px #ffee0055,0 4px 14px #000;
+  opacity:0;pointer-events:none;transition:opacity .25s ease;-webkit-font-smoothing:antialiased}
+.kw-caption.show{opacity:1;animation:kwPop .24s ease-out both}
+@keyframes kwPop{from{opacity:0;transform:translateX(-50%) scale(.82)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+@media(max-width:760px){.kw-caption{font-size:clamp(30px,10vw,52px);bottom:calc(130px + env(safe-area-inset-bottom,0px));border-radius:16px}}
+/* /KW-CAPTION-CSS */
+/* MARQUEE-CSS */
+.marquee{flex:0 0 auto;height:34px;overflow:hidden;display:flex;align-items:center;background:#030812;border-top:1px solid #ffe60040;z-index:6;padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:content-box}
+.marquee-track{display:flex;flex:0 0 auto;width:max-content;white-space:nowrap;animation:marqueeMove 38s linear infinite;will-change:transform}
+.marquee-track span{display:inline-block;padding-right:90px;color:#ffe600;font-weight:700;font-size:15px;letter-spacing:.6px;text-shadow:0 0 10px #ffe60044}
+@keyframes marqueeMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.audio-console{bottom:112px}
+@media(max-width:760px){
+  .marquee{height:30px}.marquee-track span{font-size:13px;padding-right:60px}
+  .bottom{padding-bottom:8px}
+  .audio-console{bottom:108px}
+  .kw-caption{bottom:calc(170px + env(safe-area-inset-bottom,0px))}
+}
+/* /MARQUEE-CSS */
+/* FIT-CSS */
+.slide{padding:3vh 5vw 12px}
+.slide.active{overflow-x:hidden}
+.fit{flex:0 0 auto;position:relative}
+.fit-inner{display:flex;flex-direction:column;transform-origin:0 0}
+.ticker{display:none!important}
+.sticker-tape{z-index:1!important}
+.brand-wrap{flex:0 1 auto;min-width:0}
+@media(max-width:560px){body.fs .brand{display:none}}
+@media(max-width:760px){.slide{padding:14px 16px 10px}}
+@media(max-width:560px){
+.kicker{font-size:10px;margin-bottom:6px}
+.title{font-size:clamp(22px,6.5vw,30px);margin-bottom:8px}
+.subtitle{font-size:13px;line-height:1.45}
+.hero-grid{gap:10px}
+.hero-art{height:120px!important;min-height:0!important;margin-top:10px!important;border-radius:16px}
+.hero-art:has(.law-sticker-scene){height:150px!important}
+.orbit{width:96px;height:96px}.emblem{font-size:38px}
+.card-grid,.split{gap:8px;margin-top:10px}
+.card{padding:11px 12px;border-radius:12px}.card h3{font-size:14px;margin-bottom:5px}.card p{font-size:12px;line-height:1.45}
+.split{grid-template-columns:1fr 1fr}
+.lane{padding:12px;min-height:0;border-radius:14px}.lane h3{font-size:15px;margin:2px 0 5px}.lane p{font-size:12px;line-height:1.4}.lane .symbol{font-size:26px;margin-bottom:4px}
+.tag{padding:4px 8px;font-size:9px;margin-bottom:6px}
+.steps{gap:8px;margin-top:10px}.step{padding:10px;min-height:0;border-radius:12px}.step b{font-size:12px;margin-bottom:4px}.step span{font-size:11.5px}
+.timeline{gap:8px;margin-top:10px}.timeline li{padding-top:30px}.dot{top:4px;left:10px;width:17px;height:17px;border-width:3px}.timeline .card{padding:10px}.timeline h4{font-size:13px}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.arrow{display:none}.flowbox{padding:9px 8px;min-width:0}.flowbox strong{font-size:13px;margin-bottom:3px}
+.warning{font-size:11px;padding:9px 11px;margin-top:10px;line-height:1.45}
+.number{font-size:22px;margin-bottom:4px}
+.law-sticker-scene{min-height:0}
+.sticker-board{width:88%;padding:10px 10px 8px;transform:none;animation:none}.sticker-board strong{font-size:15px}.sticker-board span{font-size:10px;margin-top:4px}.sticker-board em{font-size:9.5px;margin-top:5px;padding-top:5px}
+}
+@media(max-height:520px){
+.topbar{height:auto;min-height:0;flex-direction:row;align-items:center;gap:8px;padding:4px calc(10px + env(safe-area-inset-left,0px)) 4px calc(10px + env(safe-area-inset-right,0px))}
+.brand-wrap{gap:6px}
+.brand{font-size:8px;line-height:1.35;letter-spacing:.4px}
+.brand span{display:none}
+.logo-slot{width:28px;height:28px;border-radius:8px;padding:2px}
+.logo-slot.bapenda{width:auto;min-width:28px;padding:2px 5px}
+.logo-slot.bapenda img{height:18px}
+.top-actions{width:auto;gap:5px;flex-wrap:nowrap}
+.top-actions .pill{flex:0 0 auto;padding:5px 8px;font-size:10px;white-space:nowrap}
+.progress{height:2px}
+.slide{padding:6px calc(4vw + env(safe-area-inset-left,0px)) 8px calc(4vw + env(safe-area-inset-right,0px))}
+.bottom{height:40px;padding:0 calc(10px + env(safe-area-inset-left,0px))}
+.nav{width:auto;gap:8px}
+.nav button{flex:0 0 auto;padding:6px 14px;font-size:12px;border-radius:10px}
+.marquee{height:24px;padding-bottom:0}
+.marquee-track span{font-size:12px;padding-right:60px}
+.kicker{font-size:9px;letter-spacing:2px;margin-bottom:4px}
+.title{margin-bottom:6px}
+.audio-console{bottom:76px}
+.kw-caption{bottom:calc(70px + env(safe-area-inset-bottom,0px));font-size:clamp(26px,9vh,56px)}
+.audio-console{padding:6px 10px;bottom:68px}
+.audio-label,.audio-status{display:none}
+.audio-controls{margin-top:4px}
+.law-sticker-scene{min-height:0}
+.sticker-board{width:88%;padding:8px 10px 6px;transform:none;animation:none}
+.sticker-board strong{font-size:14px}.sticker-board span{font-size:9.5px;margin-top:3px}.sticker-board em{font-size:9px;margin-top:4px;padding-top:4px}
+.sticker-tape{height:10px}
+
+.kicker{font-size:10px;margin-bottom:6px}
+.title{font-size:clamp(22px,6.5vw,30px);margin-bottom:8px}
+.subtitle{font-size:13px;line-height:1.45}
+.hero-grid{gap:10px}
+.hero-art{height:120px!important;min-height:0!important;margin-top:10px!important;border-radius:16px}
+.hero-art:has(.law-sticker-scene){height:150px!important}
+.orbit{width:96px;height:96px}.emblem{font-size:38px}
+.card-grid,.split{gap:8px;margin-top:10px}
+.card{padding:11px 12px;border-radius:12px}.card h3{font-size:14px;margin-bottom:5px}.card p{font-size:12px;line-height:1.45}
+.split{grid-template-columns:1fr 1fr}
+.lane{padding:12px;min-height:0;border-radius:14px}.lane h3{font-size:15px;margin:2px 0 5px}.lane p{font-size:12px;line-height:1.4}.lane .symbol{font-size:26px;margin-bottom:4px}
+.tag{padding:4px 8px;font-size:9px;margin-bottom:6px}
+.steps{gap:8px;margin-top:10px}.step{padding:10px;min-height:0;border-radius:12px}.step b{font-size:12px;margin-bottom:4px}.step span{font-size:11.5px}
+.timeline{gap:8px;margin-top:10px}.timeline li{padding-top:30px}.dot{top:4px;left:10px;width:17px;height:17px;border-width:3px}.timeline .card{padding:10px}.timeline h4{font-size:13px}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.arrow{display:none}.flowbox{padding:9px 8px;min-width:0}.flowbox strong{font-size:13px;margin-bottom:3px}
+.warning{font-size:11px;padding:9px 11px;margin-top:10px;line-height:1.45}
+.number{font-size:22px;margin-bottom:4px}
+.law-sticker-scene{min-height:0}
+.sticker-board{width:88%;padding:10px 10px 8px;transform:none;animation:none}.sticker-board strong{font-size:15px}.sticker-board span{font-size:10px;margin-top:4px}.sticker-board em{font-size:9.5px;margin-top:5px;padding-top:5px}
+}
+body.fs .topbar{height:auto;min-height:0;flex-direction:row;align-items:center;gap:8px;padding:4px calc(10px + env(safe-area-inset-left,0px)) 4px calc(10px + env(safe-area-inset-right,0px))}
+body.fs .brand-wrap{gap:6px}
+body.fs .brand{font-size:8px;line-height:1.35;letter-spacing:.4px}
+body.fs .brand span{display:none}
+body.fs .logo-slot{width:28px;height:28px;border-radius:8px;padding:2px}
+body.fs .logo-slot.bapenda{width:auto;min-width:28px;padding:2px 5px}
+body.fs .logo-slot.bapenda img{height:18px}
+body.fs .top-actions{width:auto;gap:5px;flex-wrap:nowrap}
+body.fs .top-actions .pill{flex:0 0 auto;padding:5px 8px;font-size:10px;white-space:nowrap}
+body.fs .progress{height:2px}
+body.fs .slide{padding:6px calc(4vw + env(safe-area-inset-left,0px)) 8px calc(4vw + env(safe-area-inset-right,0px))}
+body.fs .bottom{height:40px;padding:0 calc(10px + env(safe-area-inset-left,0px))}
+body.fs .nav{width:auto;gap:8px}
+body.fs .nav button{flex:0 0 auto;padding:6px 14px;font-size:12px;border-radius:10px}
+body.fs .marquee{height:24px;padding-bottom:0}
+body.fs .marquee-track span{font-size:12px;padding-right:60px}
+body.fs .kicker{font-size:9px;letter-spacing:2px;margin-bottom:4px}
+body.fs .title{margin-bottom:6px}
+body.fs .audio-console{bottom:76px}
+body.fs .kw-caption{bottom:calc(70px + env(safe-area-inset-bottom,0px));font-size:clamp(26px,9vh,56px)}
+body.fs .audio-console{padding:6px 10px;bottom:68px}
+body.fs .audio-label,body.fs .audio-status{display:none}
+body.fs .audio-controls{margin-top:4px}
+body.fs .law-sticker-scene{min-height:0}
+body.fs .sticker-board{width:88%;padding:8px 10px 6px;transform:none;animation:none}
+body.fs .sticker-board strong{font-size:14px}
+body.fs .sticker-board span{font-size:9.5px;margin-top:3px}
+body.fs .sticker-board em{font-size:9px;margin-top:4px;padding-top:4px}
+body.fs .sticker-tape{height:10px}
+@media(max-height:520px) and (min-width:560px){
+.hero-grid{grid-template-columns:1.15fr .85fr;gap:3vw}
+.hero-art{height:min(42vh,190px)!important;min-height:0!important;border-radius:18px}
+.orbit{width:130px;height:130px}.emblem{font-size:48px}
+.card-grid,.split{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.steps{grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.step{min-height:0}
+.timeline{grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.timeline:before{display:block}
+.flow{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;margin-top:8px}.arrow{display:block;transform:none;font-size:16px}.hero-art{height:90px!important}.hero-art:has(.law-sticker-scene){height:120px!important}.orbit{width:80px;height:80px}.emblem{font-size:32px}
+.lane{min-height:0}
+}
+/* /FIT-CSS */
 </style>
 </head>
 <body>
@@ -147,7 +289,7 @@ body:before{background:radial-gradient(ellipse at 12% 12%,#24344c 0,transparent 
     </div>
     <div class="hero-art"><div class="sun"></div><div class="orbit"><div class="emblem">🏛️</div></div><div class="skyline"><div class="building"></div><div class="building"></div><div class="building"></div><div class="building"></div><div class="building"></div><div class="building"></div></div></div>
   </div>
-  <div class="ticker"><span>PAJAK DAERAH • KEPATUHAN • PELAYANAN PUBLIK • JAKARTA MAJU • PAJAK DAERAH • KEPATUHAN • PELAYANAN PUBLIK •</span></div>
+  
 </section>
 
 <section class="slide" data-title="Dasar Hukum" data-narration="Pelaksanaan penagihan harus memiliki dasar hukum yang jelas. Materi ini merujuk pada Undang-Undang Nomor 19 Tahun 2000 tentang perubahan atas Undang-Undang Nomor 19 Tahun 1997 mengenai Penagihan Pajak dengan Surat Paksa. Di tingkat daerah, materi mencantumkan Peraturan Gubernur DKI Jakarta Nomor 190 Tahun 2017 mengenai tata cara penagihan pajak daerah dengan surat paksa, penyitaan, dan lelang. Selanjutnya terdapat Keputusan Kepala Bapenda Nomor 255 Tahun 2024 yang menjadi rujukan digitalisasi dan koordinasi elektronik penagihan. Materi juga mencantumkan Keputusan Gubernur Nomor 164 Tahun 2026 mengenai batas waktu pembayaran. Sebelum digunakan sebagai pedoman operasional, nomor, judul, status berlaku, perubahan, dan ruang lingkup setiap regulasi perlu diverifikasi melalui JDIH resmi.">
@@ -280,6 +422,7 @@ body:before{background:radial-gradient(ellipse at 12% 12%,#24344c 0,transparent 
   <button type="button" onclick="closeTapReveal()">Tutup</button>
 </div>
 
+<div class="kw-caption" id="kwCaption" aria-hidden="true"></div>
 <div class="audio-console" id="audioConsole">
   <div class="audio-head">
     <span class="audio-label">🎙 NARATOR ELEVENLABS • MP3</span>
@@ -303,6 +446,7 @@ body:before{background:radial-gradient(ellipse at 12% 12%,#24344c 0,transparent 
   <div class="nav"><button onclick="prevSlide()">← Sebelumnya</button><button class="primary" onclick="nextSlide()">Berikutnya →</button></div>
   <div class="counter" id="slideName">PEMBUKA</div>
 </footer>
+<div class="marquee" id="infoMarquee" aria-label="UPPPD Wilayah Penjaringan, Jl. Pluit Raya No.5 Kel. Penjaringan Jakarta Utara ......... Mudah ..... Ramah ..... Nyaman ......"><div class="marquee-track"><span>UPPPD Wilayah Penjaringan, Jl. Pluit Raya No.5 Kel. Penjaringan Jakarta Utara ......... Mudah ..... Ramah ..... Nyaman ......</span><span>UPPPD Wilayah Penjaringan, Jl. Pluit Raya No.5 Kel. Penjaringan Jakarta Utara ......... Mudah ..... Ramah ..... Nyaman ......</span><span>UPPPD Wilayah Penjaringan, Jl. Pluit Raya No.5 Kel. Penjaringan Jakarta Utara ......... Mudah ..... Ramah ..... Nyaman ......</span><span>UPPPD Wilayah Penjaringan, Jl. Pluit Raya No.5 Kel. Penjaringan Jakarta Utara ......... Mudah ..... Ramah ..... Nyaman ......</span></div></div>
 </div>
 <script>
 let current=0;
@@ -451,6 +595,7 @@ function showSlide(i){
   document.getElementById('counter').textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
   document.getElementById('slideName').textContent=slides[current].dataset.title.toUpperCase();
   loadSlideAudio(autoNarration);
+  fitActive();
   window.scrollTo(0,0);
 }
 function nextSlide(){showSlide(current+1)}
@@ -558,7 +703,6 @@ player.addEventListener('error',()=>{
   scheduleFallbackNextSlide();
 });
 
-function toggleFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}
 
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextSlide()}
@@ -567,6 +711,94 @@ document.addEventListener('keydown',e=>{
   if(e.key.toLowerCase()==='a')toggleAudioConsole();
   if(e.key.toLowerCase()==='f')toggleFullscreen();
 });
+/* KW-CAPTION-JS */
+const CAPTION_CUES={"0": [[37.18, 38.08, "Penagihan Aktif"]], "1": [[2.71, 3.46, "Dasar Hukum"], [17.03, 17.75, "Surat Paksa"], [29.62, 30.34, "Surat Paksa"], [30.65, 31.36, "Penyitaan"], [31.73, 32.17, "Lelang"], [41.75, 42.48, "Koordinasi"]], "2": [[6.51, 7.56, "Penagihan Pasif"], [25.37, 26.5, "Penagihan Aktif"], [33.19, 33.99, "Surat Teguran"], [34.29, 35.21, "Surat Paksa"], [35.5, 36.25, "Penyitaan"], [37.22, 37.58, "Lelang"], [47.5, 48.5, "Penagihan Aktif"], [53.05, 53.58, "Dokumen"]], "3": [[1.79, 2.94, "Tanggal Jatuh Tempo"], [4.32, 4.87, "Dokumen"], [4.87, 5.59, "Ketetapan"], [6.5, 7.25, "SPPT"], [7.68, 8.5, "SKPD"], [9.28, 10.56, "SKPDKB"], [42.13, 43.51, "SPPT PBB"], [43.98, 44.75, "SKPD"], [45.26, 46.22, "PBJT"], [50.28, 50.8, "Dokumen"], [50.8, 51.5, "Ketetapan"], [53.32, 54.38, "Tanggal Jatuh Tempo"]], "4": [[5.47, 6.48, "Penagihan Pasif"], [30.58, 31.68, "Pemasangan Stiker"], [55.6, 56.25, "Ketetapan"]], "5": [[8.31, 9.06, "Surat Paksa"], [10.59, 11.28, "Koordinasi"], [14.88, 15.4, "Dokumen"], [26.84, 27.68, "Surat Teguran"], [33.25, 33.93, "Tujuh Hari"], [36.18, 37.04, "Surat Teguran"], [40.21, 40.87, "Ketetapan"], [41.25, 42.07, "Dasar Hukum"], [42.54, 43.65, "Tanggal Jatuh Tempo"], [49.67, 50.21, "Dokumen"]], "6": [[2.27, 2.98, "Surat Paksa"], [6.9, 7.63, "Surat Paksa"], [10.92, 11.83, "Surat Teguran"], [16.25, 16.97, "Surat Paksa"], [19.95, 20.66, "Surat Paksa"], [31.86, 32.59, "Surat Paksa"]], "7": [[1.13, 1.76, "Surat Paksa"], [7.6, 8.19, "Penyitaan"], [12.63, 14.23, "Dua Kali Dua Puluh Empat Jam"], [14.75, 15.46, "Surat Paksa"], [21.68, 22.29, "Penyitaan"], [41.12, 41.71, "Penyitaan"], [46.5, 47.1, "Dokumen"], [47.4, 48.39, "Berita Acara"], [48.72, 49.83, "Identifikasi Aset"], [50.38, 51.13, "Koordinasi"]], "8": [[8.7, 9.09, "Lelang"], [16.67, 17.1, "Lelang"], [21.83, 22.19, "Lelang"], [23.78, 24.33, "Penyitaan"], [25.23, 25.59, "Lelang"], [33.35, 33.93, "Dokumen"], [33.93, 34.52, "Penyitaan"], [35.53, 35.87, "Lelang"], [38.72, 39.11, "Lelang"], [44.91, 45.97, "Penagihan Aktif"]], "9": [[51.08, 51.73, "Dokumen"], [58.55, 59.27, "Koordinasi"]], "10": [[23.29, 24.08, "Surat Paksa"], [28.05, 28.64, "Penyitaan"], [30.42, 30.82, "Lelang"], [32.75, 33.38, "Koordinasi"], [35.11, 35.59, "Dokumen"]]};
+const CAPTION_LEAD=0.12;  // detik: teks muncul sedikit lebih awal agar tidak terlambat
+const CAPTION_HOLD=1.0;   // detik: teks bertahan setelah kata selesai diucapkan
+(function(){
+  const el=document.getElementById('kwCaption');
+  let shown=null;
+  function hide(){if(shown!==null){el.classList.remove('show');shown=null}}
+  function tick(){
+    if(!player.paused){
+      const cues=CAPTION_CUES[current]||[];
+      const t=player.currentTime;
+      let hit=-1;
+      for(let i=0;i<cues.length;i++){
+        if(t>=cues[i][0]-CAPTION_LEAD&&t<=cues[i][1]+CAPTION_HOLD)hit=i;
+      }
+      if(hit<0)hide();
+      else{
+        const key=current+':'+hit;
+        if(key!==shown){
+          shown=key;
+          el.textContent=cues[hit][2];
+          el.classList.remove('show');void el.offsetWidth;el.classList.add('show');
+        }
+      }
+    }else hide();
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+/* /KW-CAPTION-JS */
+/* FIT-JS */
+const FIT_MIN=0.4;
+slides.forEach(s=>{
+  if(s.querySelector(':scope>.fit'))return;
+  const fit=document.createElement('div');fit.className='fit';
+  const inner=document.createElement('div');inner.className='fit-inner';
+  while(s.firstChild)inner.appendChild(s.firstChild);
+  fit.appendChild(inner);s.appendChild(fit);
+});
+function fitActive(){
+  const s=slides[current];if(!s)return;
+  const fit=s.querySelector(':scope>.fit');if(!fit)return;
+  const inner=fit.firstElementChild;
+  const cs=getComputedStyle(s);
+  const W=s.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+  const H=s.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+  if(W<=0||H<=0)return;
+  function put(k){inner.style.width=(W/k)+'px';inner.style.transform='scale('+k+')';fit.style.width=W+'px';}
+  function ok(k){put(k);return inner.scrollHeight*k<=H+0.5&&inner.scrollWidth<=W/k+1}
+  let k=1;
+  if(!ok(1)){
+    let lo=FIT_MIN,hi=1;
+    if(!ok(lo)){k=lo}
+    else{for(let i=0;i<10;i++){const mid=(lo+hi)/2;if(ok(mid))lo=mid;else hi=mid}k=lo}
+  }
+  put(k);
+  const hh=inner.scrollHeight*k;
+  fit.style.height=Math.ceil(hh)+'px';
+  s.style.overflowY=hh>H+1?'auto':'hidden';
+  s.dataset.fit=k.toFixed(2);
+}
+let fitRaf=0;
+function fitSoon(){cancelAnimationFrame(fitRaf);fitRaf=requestAnimationFrame(fitActive)}
+window.addEventListener('resize',fitSoon);
+window.addEventListener('orientationchange',()=>{setTimeout(fitActive,120);setTimeout(fitActive,450)});
+if(window.visualViewport)window.visualViewport.addEventListener('resize',fitSoon);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitSoon);
+window.addEventListener('load',fitSoon);
+function onFsChange(){
+  document.body.classList.toggle('fs',!!(document.fullscreenElement||document.webkitFullscreenElement));
+  fitSoon();setTimeout(fitActive,200);setTimeout(fitActive,600);
+}
+document.addEventListener('fullscreenchange',onFsChange);
+document.addEventListener('webkitfullscreenchange',onFsChange);
+function toggleFullscreen(){
+  const d=document,el=d.documentElement;
+  const isFs=d.fullscreenElement||d.webkitFullscreenElement;
+  const req=el.requestFullscreen||el.webkitRequestFullscreen;
+  if(req){
+    if(!isFs){
+      let r;try{r=req.call(el)}catch(e){document.body.classList.toggle('fs')}
+      if(r&&r.catch)r.catch(()=>{document.body.classList.toggle('fs');fitSoon()});
+    }else{(d.exitFullscreen||d.webkitExitFullscreen).call(d)}
+  }else{document.body.classList.toggle('fs')}
+  fitSoon();setTimeout(fitActive,200);setTimeout(fitActive,600);
+}
+/* /FIT-JS */
 showSlide(0);
 </script>
 
